@@ -1,0 +1,261 @@
+GRUPO 4
+
+ATIVIDADE 1
+
+Codigo
+
+Função para verificar se todas as letras são iguais
+function verificarLetras(entrada) {
+ Convertendo todas as letras para minúsculas para comparar corretamente
+    entrada = entrada.toLowerCase();
+
+ Verificando se todas as letras são iguais
+ para (var i = 1; i < entrada.length; i++) {
+        if (entrada[i] !== entrada[0]) {
+ retorno "Letras Diferentes";
+        }
+    }
+
+ Se todas as letras forem iguais
+ retorno "Letras Iguais";
+}
+
+Função para capturar a entrada do usuário e chamar a função de verificação
+função main() {
+    var entrada = prompt("Digite 4 letras: ");
+
+ Verificando se a entrada possui exatamente 4 caracteres
+    if (entrada.length !== 4) {
+        console.log("Por favor, digite exatamente 4 letras.");
+ retornar;
+    }
+
+    var resultado = verificarLetras(entrada);
+    console.log(resultado);
+}
+
+Chamando a função principal
+principal();
+
+
+fluxograma
+
+
+
+
+Início
+|
+V
+Solicitar ao usuário que digite 4 letras
+|
+V
+Capturar a entrada do usuário
+|
+V
+Verificar se a entrada possui exatamente 4 caracteres
+|
+V
+Sim: Continuar
+Não: Exibir mensagem de erro e terminar
+|
+V
+Chamar a função verificarLetras(entrada)
+|
+V
+Converter todas as letras para minúsculas
+|
+V
+Iniciar loop de verificação de letras
+|
+V
+Comparar cada letra com a primeira
+|
+V
+Se alguma letra for diferente:
+|   |
+|   V
+|   Retornar "Letras Diferentes"
+|
+V
+Se todas as letras forem iguais:
+|
+V
+Retornar "Letras Iguais"
+|
+V
+Fim
+
+
+
+ATIVIDADE 2
+
+
+Codigo 
+
+Função para verificar se o número é múltiplo de 3 e/ou 5
+function verificarMultiplo(numero) {
+    var mensagem = "";
+
+ Verificando se o número é múltiplo de 3 e/ou 5
+    if (numero % 3 === 0 && numero % 5 === 0) {
+        mensagem = "Múltiplo de 3 e 5";
+    } else if (numero % 3 === 0) {
+        mensagem = "Múltiplo apenas de 3";
+    } else if (numero % 5 === 0) {
+        mensagem = "Múltiplo apenas de 5";
+    } else {
+        mensagem = "Não é múltiplo de 3 nem de 5";
+    }
+
+ retornar mensagem;
+}
+
+Função principal para capturar a entrada do usuário e chamar a função de verificação
+função main() {
+    var numero = parseInt(prompt("Digite um número: "));
+
+ Verificando se a entrada é um número
+    if (isNaN(numero)) {
+        console.log("Por favor, digite um número válido.");
+ retornar;
+    }
+
+    var resultado = verificarMultiplo(numero);
+    console.log(resultado);
+}
+
+Chamando a função principal
+principal();
+
+
+fluxograma
+
+Início
+|
+V
+Solicitar ao usuário que digite um número
+|
+V
+Capturar a entrada do usuário
+|
+V
+Verificar se a entrada é um número
+|
+V
+Sim: Continuar
+Não: Exibir mensagem de erro e terminar
+|
+V
+Chamar a função verificarMultiplo(numero)
+|
+V
+Verificar se o número é múltiplo de 3 e 5
+|
+V
+Sim: Retornar "Múltiplo de 3 e 5"
+Não: Continuar
+|
+V
+Verificar se o número é múltiplo apenas de 3
+|
+V
+Sim: Retornar "Múltiplo apenas de 3"
+Não: Continuar
+|
+V
+Verificar se o número é múltiplo apenas de 5
+|
+V
+Sim: Retornar "Múltiplo apenas de 5"
+Não: Retornar "Não é múltiplo de 3 nem de 5"
+|
+V
+Fim
+
+
+ATIVIDADE 3
+
+
+Codigo
+
+Função para verificar se um número é primo
+function verificarPrimo(numero) {
+ Verificando se o número é menor ou igual a 1
+    if (numero <= 1) {
+        return "Não é primo";
+    }
+
+ Verificando se o número é divisível por algum número além de 1 e ele mesmo
+ para (var i = 2; i <= Math.sqrt(numero); i++) {
+        if (numero % i === 0) {
+            return "Não é primo";
+        }
+    }
+
+ Se o número não foi divisível por nenhum outro número, exceto 1 e ele mesmo
+ retorno "É primo";
+}
+
+Função principal para capturar a entrada do usuário e chamar a função de verificação
+função main() {
+    var numero = parseInt(prompt("Digite um número inteiro positivo maior que 1: "));
+
+ Verificando se a entrada é um número inteiro positivo maior que 1
+ if (isNaN(numero) || numero <= 1 || ! Number.isInteger(numero)) {
+        console.log("Por favor, digite um número inteiro positivo maior que 1.");
+ retornar;
+    }
+
+    var resultado = verificarPrimo(numero);
+    console.log(resultado);
+}
+
+Chamando a função principal
+principal();
+
+
+fluxograma
+
+Início
+|
+V
+Solicitar ao usuário que digite um número inteiro positivo maior que 1
+|
+V
+Capturar a entrada do usuário
+|
+V
+Verificar se a entrada é um número inteiro positivo maior que 1
+|
+V
+Sim: Continuar
+Não: Exibir mensagem de erro e terminar
+|
+V
+Chamar a função verificarPrimo(número)
+|
+V
+Verificar se o número é menor ou igual a 1
+|
+V
+Sim: Retornar "Não é primo"
+Não: Continuar
+|
+V
+Iniciar loop de verificação de divisibilidade
+|
+V
+Verificar se o número é divisível por algum número além de 1 e ele mesmo
+|
+V
+Sim: Retornar "Não é primo"
+Não: Continuar
+|
+V
+Se o número não foi divisível por nenhum outro número, exceto 1 e ele mesmo
+|
+V
+Retornar "É primo"
+|
+V
+Fim
